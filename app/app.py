@@ -130,7 +130,6 @@ if page == ' 📊 Prediction':
     dummied_data['General_Health'] = dummied_data['General_Health'].apply(lambda x: 'Poor' if x == 'Poor' else 'Good')
     dummied_data['General_Health'] = dummied_data['General_Health'].map({"Poor":1, "Good":0})
     to_be_predicted = dummied_data
-    st.write(to_be_predicted)
 
     ## Prediction of the data 
 
@@ -139,7 +138,122 @@ if page == ' 📊 Prediction':
     model = joblib.load(MODEL_PATH)
     predicted = model.predict(to_be_predicted)
     if st.button("Predict"):
-        if predicted[0] == "0":
-            st.success("You are not at risk")
+        if int(predicted[0]) == 0:
+            st.success("Congratulations! You are not at risk")
         else:
-            st.error("You are at risk ")
+            st.error("You are at risk!")
+
+    
+    #Disclamer 
+
+    st.sidebar.markdown("""
+    ---  
+    ### ⚠️ Disclaimer
+
+    This application was developed as part of a data science project and is based on a relatively small and synthetic dataset. While the model demonstrates how lifestyle and clinical features can be used to predict the risk of having the heart disease, it is **not trained on real clinical-scale data** and should **not be used for any actual medical decision-making**.
+
+    Please explore and learn from this tool, but do not interpret its output as medical advice or a diagnostic reference. Always consult a qualified healthcare professional for real-world health concerns.
+    """)
+            
+
+
+# About the model page 
+
+if page == ' ℹ️ About the Model':
+    st.header("Thank you so much for using the model !")
+    st.error("This model is only for learning purpose, don't rely on this model for your medical evaluation! ")
+    st.markdown("---")
+    st.subheader("Hey there, from the developer of this app! You can know more about me in the   👨‍💻 Developer section of the navigation bar at the top right.")
+    st.subheader(" Talking about the model, different five models were tested on the same data with 160000 rows and 30 columns or features and then the model performing better was thus selected.")
+    #Logistic Regression
+    st.markdown("---")
+
+    st.header("Model One : Logistic Regression")
+    st.subheader("The first model to be tested was logistic regression. The model performed good but not better compared to others.The accuracy scores of the model after all the pipeline adjustments and hyperparameter tuning were as follows:")
+    st.write("Accuracy of the model : 74%")
+    st.write("Precison of the model : 71%")
+    st.write("Recall of the model: 73%")
+
+    # Decision Tree Classifier
+    st.markdown("---")
+    st.header("Model Two : Decision Tree Classifier")
+    st.subheader("The second model to be tested was Decision Tree Classifier.The accuracy scores of the model after all the pipeline adjustments and hyperparameter tuning were as follows:")
+    st.write("Accuracy of the model : 73%")
+    st.write("Precison of the model : 75%")
+    st.write("Recall of the model: 61%")
+
+
+    # Bagging Classifier
+    st.markdown("---")
+    st.header("Model Three :  Bagging Classifier")
+    st.subheader("The third model to be tested was  Bagging Classifier.The estimator used in the model was the Decision Tree Classifier.The model outperformed every model and was selected as the main model for the prediciton. The accuracy scores of the model after all the pipeline adjustments and hyperparameter tuning were as follows:")
+    st.write("Accuracy of the model : 80%")
+    st.write("Precison of the model : 84%")
+    st.write("Recall of the model: 74%")
+
+
+    # Random Forest Classifier
+    st.markdown("---")
+    st.header("Model Four:  Random Forest Classifier")
+    st.subheader("The fourth model to be tested was  Random Forest Classifier.The estimator used in the model was the Decision Tree Classifier by default. The accuracy scores of the model after all the pipeline adjustments and hyperparameter tuning were as follows:")
+    st.write("Accuracy of the model : 79%")
+    st.write("Precison of the model : 82%")
+    st.write("Recall of the model: 71%")
+
+    # XGBoost Classifier
+    st.markdown("---")
+    st.header("Model Five:   XGBoost Classifier")
+    st.subheader("The fifth and last model to be tested was  XGBoost Classifier. The ScikitLearn API was used to train and test the data. The accuracy scores of the model after all the pipeline adjustments and hyperparameter tuning were as follows:")
+    st.write("Accuracy of the model : 79%")
+    st.write("Precison of the model : 82%")
+    st.write("Recall of the model: 74%")
+
+    st.markdown("---")
+
+    #Disclamer 
+
+    st.sidebar.markdown("""
+    ---  
+    ### ⚠️ Disclaimer
+
+    This application was developed as part of a data science project and is based on a relatively small and synthetic dataset. While the model demonstrates how lifestyle and clinical features can be used to predict the risk of having the heart disease, it is **not trained on real clinical-scale data** and should **not be used for any actual medical decision-making**.
+
+    Please explore and learn from this tool, but do not interpret its output as medical advice or a diagnostic reference. Always consult a qualified healthcare professional for real-world health concerns.
+    """)
+
+
+    ## Metrics used to evaluate the model's performance 
+
+    st.header("Metrics used to choose the best model")
+    st.text("")
+    st.header("1. ROC-AUC-CURVE")
+   
+    st.subheader("The ROC-AUC curve was used in order to evaluate the best performance. The roc auc score of all the models were compared in the single chart !")
+    st.image("app/rocauc.png")
+
+    st.header("2. Precision-Recall Curve")
+    st.subheader("The Precision-Recall Curve")
+    st.subheader("The precision-recall curve of all the models has been shown in the diagram below!")
+    st.image("app/precisionrecall.png")
+
+    st.subheader("Based on the results, the roc auc score and area under the curve of precision recall curve, the bagging classifer outperforms every single of the model. Even though, the random forest classifier and XGBoost come closer, Bagging Classifier was considered the main model!.")
+
+# About the developer
+
+if page == ' 👨‍💻 Developer':
+    st.title("Greetings 👋 ¡Hola! 👋 Bonjour")
+    st.text("")
+    st.subheader("Hi, I'm **Sujal Adhikari**, a sophomore at Caldwell University and an aspiring Data Scientist. This project means a lot to me—it’s my very first step into real-world machine learning, built from the ground up through hard work, persistence, and a deep desire to learn. There were challenges along the way, but every late night and every debugging session was worth it. I’m incredibly grateful to **Dr. Vlad Veksler** for his guidance and for helping me understand what it truly takes to grow in this field. Creating something meaningful using what I’ve learned so far has been both humbling and empowering. This is just the beginning, and I’m excited to keep learning, growing, and building. Thank you for being a part of this journey.")
+    st.text("")
+    st.subheader("Thank You 🙏 Gracias! 🙏 Merci")
+
+    ##Side bar 
+    st.sidebar.title("Meet the developer")
+    st.sidebar.header("Sujal Adhikari")
+    st.sidebar.write("New York Metropolitan Area")
+    st.sidebar.write("Data Science | Data Analysis | Machine Learning")
+    st.text("")
+    st.sidebar.text("Thank you for trying out my first web app built with scikit-learn! This journey has had its challenges, but I'm proud to share something with real-life meaning. It's just the beginning—and purely educational for now. I’ll keep building and sharing more. Feel free to connect with me and follow my journey below!")
+    st.sidebar.markdown("[Github](https://github.com/suzaladhikari)", unsafe_allow_html=True)
+    st.sidebar.markdown("[Twitter](https://twitter.com/LifeOfSujal)", unsafe_allow_html=True)
+    st.sidebar.markdown("sujal.adhikari.ds@gmail.com")

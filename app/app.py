@@ -229,12 +229,12 @@ if page == ' ℹ️ About the Model':
     st.header("1. ROC-AUC-CURVE")
    
     st.subheader("The ROC-AUC curve was used in order to evaluate the best performance. The roc auc score of all the models were compared in the single chart !")
-    st.image("app/rocauc.png")
+    st.image("images/rocauc.png")
 
     st.header("2. Precision-Recall Curve")
     st.subheader("The Precision-Recall Curve")
     st.subheader("The precision-recall curve of all the models has been shown in the diagram below!")
-    st.image("app/precisionrecall.png")
+    st.image("images/precisionrecall.png")
 
     st.subheader("Based on the results, the roc auc score and area under the curve of precision recall curve, the bagging classifer outperforms every single of the model. Even though, the random forest classifier and XGBoost come closer, Bagging Classifier was considered the main model!.")
 

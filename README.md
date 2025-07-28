@@ -20,33 +20,33 @@
 
 ---
 
-## Project Structure 
+## 📁 Project Structure
 
+```
 CARDIOVASCULAR_PROJECT/
 │
 ├── app/
-│ ├── app.py # Streamlit web app
-│ ├── rocauc.png # ROC-AUC curve image
-│ └── precisionrecall.png # Precision-Recall curve image
+│   ├── app.py                   # Streamlit web app
+│   ├── rocauc.png               # ROC-AUC curve image
+│   └── precisionrecall.png      # Precision-Recall curve image
 │
 ├── data_cleaning/
-│ ├── cardiovascular.csv # Raw dataset
-│ ├── cleaned.csv # Cleaned dataset after preprocessing
-│ └── cleaningDataset.ipynb # Notebook for data cleaning
+│   ├── cardiovascular.csv       # Raw dataset
+│   ├── cleaned.csv              # Cleaned dataset after preprocessing
+│   └── cleaningDataset.ipynb    # Notebook for data cleaning
 │
 ├── EDA/
-│ ├── cleaned.csv # Input dataset for EDA
-│ └── EDA.ipynb # Exploratory data analysis notebook
+│   ├── cleaned.csv              # Input dataset for EDA
+│   └── EDA.ipynb                # Exploratory data analysis notebook
 │
 ├── modelPreparation/
-│ ├── dataforModel.ipynb # Feature engineering notebook
-│ ├── forModel.csv # Final dataset ready for model training
-│ ├── model.ipynb # Model training & evaluation
-│ └── model.pkl # Best performing model (Bagging Classifier)
+│   ├── dataforModel.ipynb       # Feature engineering notebook
+│   ├── forModel.csv             # Final dataset ready for model training
+│   ├── model.ipynb              # Model training & evaluation
+│   └── model.pkl                # Best performing model (Bagging Classifier)
 │
-└── README.md # Project documentation (this file)
-
----
+└── README.md                    # Project documentation (this file)
+```
 
 ## 🧪 Machine Learning Models Compared
 

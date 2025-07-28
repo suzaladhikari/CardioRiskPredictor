@@ -65,8 +65,8 @@ CARDIOVASCULAR_PROJECT/
 
 ## 📈 Model Evaluation Visuals
 
-- ROC-AUC Curve ![ROC AUC](app/rocauc.png)
-- Precision-Recall Curve ![PR Curve](app/precisionrecall.png)
+- ROC-AUC Curve ![ROC AUC](images/rocauc.png)
+- Precision-Recall Curve ![PR Curve](images/precisionrecall.png)
 
 ---
 

@@ -25,27 +25,26 @@
 CARDIOVASCULAR_PROJECT/
 │
 ├── app/
-│   ├── app.py
-│   ├── rocauc.png
-│   └── precisionrecall.png
+│ ├── app.py # Streamlit web app
+│ ├── rocauc.png # ROC-AUC curve image
+│ └── precisionrecall.png # Precision-Recall curve image
 │
 ├── data_cleaning/
-│   ├── cardiovascular.csv
-│   ├── cleaned.csv
-│   └── cleaningDataset.ipynb
+│ ├── cardiovascular.csv # Raw dataset
+│ ├── cleaned.csv # Cleaned dataset after preprocessing
+│ └── cleaningDataset.ipynb # Notebook for data cleaning
 │
 ├── EDA/
-│   ├── cleaned.csv
-│   └── EDA.ipynb
+│ ├── cleaned.csv # Input dataset for EDA
+│ └── EDA.ipynb # Exploratory data analysis notebook
 │
 ├── modelPreparation/
-│   ├── dataforModel.ipynb
-│   ├── forModel.csv
-│   ├── model.ipynb
-│   └── model.pkl
+│ ├── dataforModel.ipynb # Feature engineering notebook
+│ ├── forModel.csv # Final dataset ready for model training
+│ ├── model.ipynb # Model training & evaluation
+│ └── model.pkl # Best performing model (Bagging Classifier)
 │
-└── README.md
-
+└── README.md # Project documentation (this file)
 
 ---
 
@@ -79,8 +78,23 @@ CARDIOVASCULAR_PROJECT/
    cd CardioRiskPredictor
 
 ## Install required packages
-  ```bash
-  pip install -r requirements.txt
+   `pip install -r requirements.txt`
 
-## Run the app
-streamlit run app.py
+## Learnings from the Project
+
+- Built a full-cycle machine learning pipeline — from data cleaning, EDA, and hypothesis testing to feature engineering, model selection, and deployment.
+
+- Performed exploratory data analysis (EDA) to uncover trends, outliers, and correlations in lifestyle and health factors.
+
+- Conducted hypothesis testing to validate assumptions and guide feature selection.
+
+- Compared multiple classification models and evaluated them using precision-recall curves, ROC-AUC, and key performance metrics.
+
+- Developed a clean, interactive Streamlit web application to make the ML model accessible and informative for end users.
+
+- Gained hands-on experience with industry-standard tools like pandas, NumPy, scikit-learn, and Streamlit.
+
+> ⚠️ **Note**: This application is not trained on actual clinical data and is intended solely for educational purposes. It must not be used for any medical decisions or diagnoses. Always consult a licensed professional for health concerns.
+
+
+

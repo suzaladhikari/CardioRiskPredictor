@@ -257,3 +257,4 @@ if page == ' 👨‍💻 Developer':
     st.sidebar.markdown("[Github](https://github.com/suzaladhikari)", unsafe_allow_html=True)
     st.sidebar.markdown("[Twitter](https://twitter.com/LifeOfSujal)", unsafe_allow_html=True)
     st.sidebar.markdown("sujal.adhikari.ds@gmail.com")
+
